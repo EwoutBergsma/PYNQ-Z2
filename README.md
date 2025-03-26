@@ -36,7 +36,7 @@ To really get going start with connecting to your PYNQ Z2 via the browser:
 
 ## Base example
 
-1. Make a new notebook.
+1. Through your browser, visit the Jupyter Notebook GUI and make a new notebook.
 1. Put this code in a notebook:
 ```python
 from pynq.overlays.base import BaseOverlay
@@ -44,6 +44,7 @@ base = BaseOverlay("base.bit")
 
 help(base)
 ```
+3. Run the code. The overlay will get loaded onto the FPGA, essentially configuring the internal hardware of the FPGA. This simple overlay merely allows you to interact with the peripherals (LEDs, switches, etc.) that are on the PYNQ Z2. Note, almost all of the peripherals on the board are only connected to the FPGA. This base overlay allows the CPU to interact with these peripherals through the FPGA.
 3. Try to turn on/off the LEDs, and read out the switches. You can use `help()` and/or `dir()`.
     - Or, for more information [see the docs](https://pynq.readthedocs.io/en/v2.6.1/pynq_overlays/loading_an_overlay.html).
 
