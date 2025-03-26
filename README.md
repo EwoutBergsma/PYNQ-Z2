@@ -34,6 +34,16 @@ To really get going start with connecting to your PYNQ Z2 via the browser:
           - Find the IP address of your PYNQ Z2 through your router's admin panel (or by scanning your local network).
 2. In the Jupyter Notebooks environment you can find some example files. Feel invited to look at those, but do not spend too much time on them, they are of limited use.
 
+## Base example
+
+```python
+from pynq.overlays.base import BaseOverlay
+base = BaseOverlay("base.bit")
+
+help(base)
+```
+
+`More info TBA`
 
 ## Adder example
 
@@ -42,10 +52,10 @@ As a simple example of the FPGA hardware acceleration, we can use the adder exam
 1. Get the file to your PYNQ Z2, you can do this using the upload button in the Jupyter Notebooks user interface.
 1. From within a Jupyter Notebooks, in Python find `adder.bit` file and load it into the FPGA (this file was generated using 
 ```python
-from pynq.overlays.base import BaseOverlay
-base = BaseOverlay("base.bit")
+from pynq import Overlay
+overlay = BaseOverlay("adder.bit")
 
-help(base)
+help(overlay)
 ```
 4. From within Jupyter Notebooks, interact with the FPGA to make it do addition. Can you make it do addition? The write addresses are `0x10`, `0x18`, the read address is `0x20`.
 
