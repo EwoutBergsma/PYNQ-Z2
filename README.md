@@ -85,7 +85,11 @@ So far we have only used provided overlays. Let's now make our own, using Vivado
 
 ## Community Projects
 
-We can also use the power of the community, like [here](https://www.pynq.io/community.html) or [here](https://www.pynq.io/embedded.html). 
+For more inspiration you can also use the power of the community, like [here](https://www.pynq.io/community.html) or [here](https://www.pynq.io/embedded.html). 
 - Note, since [version 2.6 .tcl files are deprecated](https://pynq.readthedocs.io/en/latest/changelog.html#:~:text=Tcl%20parsing%20removed%20%2D%20please%20generate%20and%20use%20an%20HWH%20file%20for%20Overlays). This means that only `*.hwh` files are currently supported. Ignore any (online) project that do not provide `*.hwh` files, `*.bit` files are also still necessary.
 
-`More information about community projects TBA`
+## What's next?
+
+Besides getting inspiration from the commmunity (see above), one can also look around in the available IP blocks in Vivado.
+
+For the more adventurous type, there is the [hls4ml](https://fastmachinelearning.org/hls4ml/), which previous students have succesfully used to transfer a keras model onto the PYNQ Z2's FPGA. If you are considering this route, please contact me, I can provide more information.  
