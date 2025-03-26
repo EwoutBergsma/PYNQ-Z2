@@ -32,18 +32,33 @@ To really get going start with connecting to your PYNQ Z2 via the browser:
       - At home you can probably hook up your PYNQ Z2 to your router.
           - The benefit to this is that the PYNQ Z2 will then also have internet access.
           - Find the IP address of your PYNQ Z2 through your router's admin panel (or by scanning your local network).
-2. In the Jupyter Notebooks environment you can find some example files. Feel invited to look at those, but do not spend too much time on them, they are of limited use. Instead, let's try to use the adder example found in this repository:
-    - Clone this repository to your PC.
-    - Get the file to your PYNQ Z2, you can do this using the upload button in the Jupyter Notebooks user interface.
-    - From within a Jupyter Notebooks, find `add.hwh` file and load it into the FPGA.
-    - From within Jupyter Notebooks, interact with the FPGA to make it do addition.
+2. In the Jupyter Notebooks environment you can find some example files. Feel invited to look at those, but do not spend too much time on them, they are of limited use.
+
+
+## Adder example
+
+As a simple example of the FPGA hardware acceleration, we can use the adder example ([original source](https://www.youtube.com/watch?v=2ErFDGSv5EE) but it is a bit outdated)  found in this repository:
+1. Clone this repository to your PC.
+1. Get the file to your PYNQ Z2, you can do this using the upload button in the Jupyter Notebooks user interface.
+1. From within a Jupyter Notebooks, in Python find `adder.bit` file and load it into the FPGA (this file was generated using 
+```python
+from pynq.overlays.base import BaseOverlay
+base = BaseOverlay("base.bit")
+
+help(base)
+```
+4. From within Jupyter Notebooks, interact with the FPGA to make it do addition. Can you make it do addition? The write addresses are `0x10`, `0x18`, the read address is `0x20`.
 
 
 ## Community Projects
 
 We can also use the power of the community, like [here](https://www.pynq.io/community.html) or [here](https://www.pynq.io/embedded.html). 
-        - Note, since [version 2.6 Tcl files are deprecated](https://pynq.readthedocs.io/en/latest/changelog.html#:~:text=Tcl%20parsing%20removed%20%2D%20please%20generate%20and%20use%20an%20HWH%20file%20for%20Overlays). This means that only `*.hwh` files are currently supported. Ignore any (online) project that do not provide `*.hwh` files.
+- Note, since [version 2.6 .tcl files are deprecated](https://pynq.readthedocs.io/en/latest/changelog.html#:~:text=Tcl%20parsing%20removed%20%2D%20please%20generate%20and%20use%20an%20HWH%20file%20for%20Overlays). This means that only `*.hwh` files are currently supported. Ignore any (online) project that do not provide `*.hwh` files, `*.bit` files are also still necessary.
 
 `More information about community projects TBA`
 
 ##  FIR Filter
+
+This is an interesting tutorial to follow: https://www.fpgadeveloper.com/2018/03/how-to-accelerate-a-python-function-with-pynq.html/
+
+However, note that at the end, the you are interested in a .hwh file (not .tcl) and a .bit.
