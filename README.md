@@ -61,6 +61,11 @@ help(overlay)
 ```
 4. From within Jupyter Notebooks, interact with the FPGA to make it do addition. Can you make it do addition? The write addresses are `0x10`, `0x18`, the read address is `0x20`.
 
+```python
+overlay.write(0x10, 3)
+overlay.write(0x18, 6)
+overlay.read(0x20)
+```
 
 ## Community Projects
 
