@@ -52,8 +52,8 @@ help(base)
 
 As a simple example of the FPGA hardware acceleration, we can use the adder example ([original source](https://www.youtube.com/watch?v=2ErFDGSv5EE) but it is a bit outdated)  found in this repository:
 1. Clone this repository to your PC.
-1. Get the file to your PYNQ Z2, you can do this using the upload button in the Jupyter Notebooks user interface.
-1. From within a Jupyter Notebooks, in Python find `adder.bit` file and load it into the FPGA (this file was generated using 
+1. Get the `adder.bit` and `adder.hwh` files onto your PYNQ Z2, you can do this using the upload button in the Jupyter Notebooks user interface.
+1. From within a Jupyter Notebooks, in Python, upload the `adder.bit` file to the FPGA, like so:
 ```python
 from pynq import Overlay
 overlay = BaseOverlay("adder.bit")
