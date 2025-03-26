@@ -42,7 +42,7 @@ To really get going start with connecting to your PYNQ Z2 via the browser:
 from pynq.overlays.base import BaseOverlay
 base = BaseOverlay("base.bit")
 
-help(base)
+help(base)  # This provides info about the overlay
 ```
 3. Run the code. The overlay will get loaded onto the FPGA, essentially configuring the internal hardware of the FPGA. This simple overlay merely allows you to interact with the peripherals (LEDs, switches, etc.) that are on the PYNQ Z2. Note, almost all of the peripherals on the board are only connected to the FPGA. This base overlay allows the CPU to interact with these peripherals through the FPGA.
 3. Try to turn on/off the LEDs, and read out the switches. You can use `help()` and/or `dir()`.
@@ -53,14 +53,14 @@ help(base)
 As a simple example of the FPGA hardware acceleration, we can use the adder example ([original source](https://www.youtube.com/watch?v=2ErFDGSv5EE) but it is a bit outdated)  found in this repository:
 1. Clone this repository to your PC.
 1. Get the `adder.bit` and `adder.hwh` files onto your PYNQ Z2, you can do this using the upload button in the Jupyter Notebooks user interface.
-1. From within a Jupyter Notebooks, in Python, upload the `adder.bit` file to the FPGA, like so:
+1. From within a Jupyter Notebooks, in Python, upload the overlay to the FPGA, like so:
 ```python
 from pynq import Overlay
 overlay = BaseOverlay("adder.bit")
 
-help(overlay)
+help(overlay)  # This provides info about the overlay
 ```
-4. From within Jupyter Notebooks, interact with the FPGA to make it do addition. Can you make it do addition? The write addresses are `0x10`, `0x18`, the read address is `0x20`.
+4. From within Jupyter Notebooks, interact with the FPGA to make it do addition. To do so you can use the adresses  `0x10` and `0x18` to write. The read address is `0x20`. This can be implemented as follows:
 
 ```python
 overlay.write(0x10, 3)
