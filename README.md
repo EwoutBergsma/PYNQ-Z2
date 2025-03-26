@@ -67,15 +67,15 @@ overlay.write(0x18, 6)
 overlay.read(0x20)
 ```
 
+##  FIR Filter
+
+This is an interesting tutorial to follow: https://www.fpgadeveloper.com/2018/03/how-to-accelerate-a-python-function-with-pynq.html/
+
+However, note that at the end, the you are interested in a .hwh file (not .tcl) and a .bit.
+
 ## Community Projects
 
 We can also use the power of the community, like [here](https://www.pynq.io/community.html) or [here](https://www.pynq.io/embedded.html). 
 - Note, since [version 2.6 .tcl files are deprecated](https://pynq.readthedocs.io/en/latest/changelog.html#:~:text=Tcl%20parsing%20removed%20%2D%20please%20generate%20and%20use%20an%20HWH%20file%20for%20Overlays). This means that only `*.hwh` files are currently supported. Ignore any (online) project that do not provide `*.hwh` files, `*.bit` files are also still necessary.
 
 `More information about community projects TBA`
-
-##  FIR Filter
-
-This is an interesting tutorial to follow: https://www.fpgadeveloper.com/2018/03/how-to-accelerate-a-python-function-with-pynq.html/
-
-However, note that at the end, the you are interested in a .hwh file (not .tcl) and a .bit.
