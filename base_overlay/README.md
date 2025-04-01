@@ -45,4 +45,4 @@ dir(base.leds[0])
 7. Can you find some more interesting functions to call? 
 7. Perhaps play around with the switches and buttons too!
 
-Some more documentation about the base overlay can be found [here](https://pynq.readthedocs.io/en/latest/pynq_overlays/loading_an_overlay.html) and [some here](https://pynq.readthedocs.io/en/latest/pynq_overlays/pynqz2/pynqz2_base_overlay.html).
+Some more documentation on the base overlay can be found [here](https://pynq.readthedocs.io/en/latest/pynq_overlays/loading_an_overlay.html) and [some here](https://pynq.readthedocs.io/en/latest/pynq_overlays/pynqz2/pynqz2_base_overlay.html).
