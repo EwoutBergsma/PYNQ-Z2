@@ -21,7 +21,7 @@ overlay.read(0x20)
 
 # There is more
 
-This repository provided you with a ready-made overlay for the adder. But you can also make it yourself.
+This repository provided a ready-made overlay for the adder. But you could also make it yourself. 
 
 The [original source](https://www.youtube.com/watch?v=2ErFDGSv5EE) uses High Level Synthesis (HLS) to create an IP block that is then used in Vivado to generate the overlay. That tutorial still uses Vivado HLS to achieve this, the newer version of that software is called Vitis HLS. By swapping out Vivado HLS with Vitis HLS, one should still be able to follow that tutorial.
 
