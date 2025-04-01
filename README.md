@@ -56,3 +56,5 @@ For the more adventurous type, there is the [hls4ml](https://fastmachinelearning
 
 - https://pynq.readthedocs.io/en/latest/getting_started.html
 - https://nandland.com/fpga-101/
+- https://is.muni.cz/el/1433/jaro2015/PV191/um/The_Zynq_Book_ebook.pdf
+- https://pynq.tue.nl/
