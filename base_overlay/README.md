@@ -18,7 +18,7 @@ The base overlay comes already installed on your PYNQ Z2 (assuming you followed 
 1. In a code cell add the following code:
 ```python
 from pynq.overlays.base import BaseOverlay
-base = BaseOverlay(base.bit)  # This uploads the provided base overlay to the FPGA of the PYNQ's SoC
+base = BaseOverlay("base.bit")  # This uploads the provided base overlay to the FPGA of the PYNQ's SoC
 
 help(base)  # This prints more information about the overlay
 ```
