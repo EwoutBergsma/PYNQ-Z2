@@ -11,5 +11,7 @@ So far we have only used provided overlays. Let's now make our own, using Vivado
 1. `Next > give project name and a directory > next > RLT Project > Next > Next > Next > Boards > search pynq-z2 and select it > next > finish`
 1. Follow [this tutorial](https://youtu.be/PwG037LuNvA?si=rXmCiVVOlwD1N3on&t=173) from 2:52 onward
 1. Note, around 11:08, be interested in creating a `*.hwh` and a `*.bit` file (**not** `*.tcl`).
+1. After doing that I found the `*.hwh`file in the directory: `\FIR_filter.gen\sources_1\bd\FIR_filter\hw_handoff` and the `*.bit` file in the location you specified in Vivado (default is in the root of the Vivado project). **Note**, make sure to have identical names, for example `fir_filter.bit` and `fir_filter.hwh`.
 1. Also, after that, the video uploads the files over the network using file explorer. Alternatively the upload button in Jupyter Notebooks can be used.
+1. Now upload the overlay to the FPGA and interact with that (let's find out together :))
 
