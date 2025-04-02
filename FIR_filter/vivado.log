@@ -30,3 +30,201 @@ Finished scanning sources
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1704] No user IP repositories specified
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
+create_bd_design "FIR_filter"
+Wrote  : <C:\Repositories\PYNQ-Z2\FIR_filter\FIR_filter.srcs\sources_1\bd\FIR_filter\FIR_filter.bd> 
+create_bd_design: Time (s): cpu = 00:00:10 ; elapsed = 00:00:21 . Memory (MB): peak = 1557.238 ; gain = 0.000
+update_compile_order -fileset sources_1
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:processing_system7:5.5 processing_system7_0
+create_bd_cell: Time (s): cpu = 00:00:04 ; elapsed = 00:00:08 . Memory (MB): peak = 1557.238 ; gain = 0.000
+endgroup
+apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 -config {make_external "FIXED_IO, DDR" apply_board_preset "1" Master "Disable" Slave "Disable" }  [get_bd_cells processing_system7_0]
+apply_bd_automation: Time (s): cpu = 00:00:07 ; elapsed = 00:00:06 . Memory (MB): peak = 1557.238 ; gain = 0.000
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:fir_compiler:7.2 fir_compiler_0
+endgroup
+set_property location {2 466 -197} [get_bd_cells fir_compiler_0]
+can't use empty string as operand of "*"
+expected number but got ""
+expected number but got ""
+expected number but got ""
+can't use empty string as operand of "*"
+expected number but got ""
+set_property -dict [list CONFIG.Data_Width.VALUE_SRC USER] [get_bd_cells fir_compiler_0]
+set_property -dict [list \
+  CONFIG.Clock_Frequency {100} \
+  CONFIG.CoefficientVector {6,0,-4,-3,5,6,-6,-13,7,44,64,44,7,-13,-6,6,5,-3,-4,0,6} \
+  CONFIG.Coefficient_Fractional_Bits {8} \
+  CONFIG.Coefficient_Sets {1} \
+  CONFIG.Coefficient_Sign {Signed} \
+  CONFIG.Coefficient_Structure {Inferred} \
+  CONFIG.Coefficient_Width {16} \
+  CONFIG.ColumnConfig {11} \
+  CONFIG.DATA_Has_TLAST {Packet_Framing} \
+  CONFIG.Data_Width {32} \
+  CONFIG.Filter_Architecture {Systolic_Multiply_Accumulate} \
+  CONFIG.M_DATA_Has_TREADY {false} \
+  CONFIG.Output_Rounding_Mode {Non_Symmetric_Rounding_Up} \
+  CONFIG.Output_Width {32} \
+  CONFIG.Quantization {Quantize_Only} \
+  CONFIG.Sample_Frequency {100} \
+] [get_bd_cells fir_compiler_0]
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_dma:7.1 axi_dma_0
+endgroup
+set_property location {2 493 -427} [get_bd_cells fir_compiler_0]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_dma_0/S_AXI_LITE} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+Slave segment '/axi_dma_0/S_AXI_LITE/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4040_0000 [ 64K ]>.
+undo
+INFO: [Common 17-17] undo 'apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_dma_0/S_AXI_LITE} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]'
+set_property -dict [list \
+  CONFIG.c_include_sg {0} \
+  CONFIG.c_sg_length_width {26} \
+] [get_bd_cells axi_dma_0]
+set_property location {2 531 -214} [get_bd_cells fir_compiler_0]
+connect_bd_intf_net [get_bd_intf_pins axi_dma_0/M_AXIS_MM2S] [get_bd_intf_pins fir_compiler_0/S_AXIS_DATA]
+connect_bd_intf_net [get_bd_intf_pins fir_compiler_0/M_AXIS_DATA] [get_bd_intf_pins axi_dma_0/S_AXIS_S2MM]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+startgroup
+set_property CONFIG.PCW_USE_S_AXI_HP0 {1} [get_bd_cells processing_system7_0]
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+endgroup
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+WARNING: [IP_Flow 19-474] Invalid Parameter 'Component_Name'
+save_bd_design
+Wrote  : <C:\Repositories\PYNQ-Z2\FIR_filter\FIR_filter.srcs\sources_1\bd\FIR_filter\FIR_filter.bd> 
+Wrote  : <C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.srcs/sources_1/bd/FIR_filter/ui/bd_81737b28.ui> 
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/processing_system7_0/M_AXI_GP0} Slave {/axi_dma_0/S_AXI_LITE} ddr_seg {Auto} intc_ip {New AXI SmartConnect} master_apm {0}}  [get_bd_intf_pins axi_dma_0/S_AXI_LITE]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+Slave segment '/axi_dma_0/S_AXI_LITE/Reg' is being assigned into address space '/processing_system7_0/Data' at <0x4040_0000 [ 64K ]>.
+apply_bd_automation -rule xilinx.com:bd_rule:clkrst -config { Clk {/processing_system7_0/FCLK_CLK0 (100 MHz)} Freq {100} Ref_Clk0 {} Ref_Clk1 {} Ref_Clk2 {}}  [get_bd_pins fir_compiler_0/aclk]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {Auto} Clk_slave {Auto} Clk_xbar {Auto} Master {/axi_dma_0/M_AXI_MM2S} Slave {/processing_system7_0/S_AXI_HP0} ddr_seg {Auto} intc_ip {New AXI Interconnect} master_apm {0}}  [get_bd_intf_pins processing_system7_0/S_AXI_HP0]
+Slave segment '/processing_system7_0/S_AXI_HP0/HP0_DDR_LOWOCM' is being assigned into address space '/axi_dma_0/Data_MM2S' at <0x0000_0000 [ 512M ]>.
+endgroup
+set_property name fir_dma [get_bd_cells axi_dma_0]
+set_property name fir [get_bd_cells fir_compiler_0]
+group_bd_cells filter [get_bd_cells fir] [get_bd_cells fir_dma]
+save_bd_design
+Wrote  : <C:\Repositories\PYNQ-Z2\FIR_filter\FIR_filter.srcs\sources_1\bd\FIR_filter\FIR_filter.bd> 
+Wrote  : <C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.srcs/sources_1/bd/FIR_filter/ui/bd_81737b28.ui> 
+make_wrapper -files [get_files C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.srcs/sources_1/bd/FIR_filter/FIR_filter.bd] -top
+WARNING: [BD 41-2670] Found an incomplete address path from address space '/filter/fir_dma/Data_S2MM' to master interface '/filter/fir_dma/M_AXI_S2MM'. Please either complete or remove this path to resolve.
+WARNING: [BD 41-702] Propagation TCL tries to overwrite USER strength parameter PCW_M_AXI_GP0_FREQMHZ(10) on '/processing_system7_0' with propagated value(100). Command ignored
+CRITICAL WARNING: [PSU-1]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_0 has negative value -0.051 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-2]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_1 has negative value -0.006 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-3]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_2 has negative value -0.009 . PS DDR interfaces might fail when entering negative DQS skew values. 
+CRITICAL WARNING: [PSU-4]  Parameter : PCW_UIPARAM_DDR_DQS_TO_CLK_DELAY_3 has negative value -0.033 . PS DDR interfaces might fail when entering negative DQS skew values. 
+INFO: [BD 5-943] Reserving offset range <0x4040_0000 [ 64K ]> from slave interface '/axi_smc/S00_AXI' to master interface '/axi_smc/M00_AXI'. This will be used by smartconnect on path for routing.
+INFO: [xilinx.com:ip:smartconnect:1.0-1] FIR_filter_axi_smc_1: SmartConnect FIR_filter_axi_smc_1 is in Low-Area Mode.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] FIR_filter_axi_smc_1: IP FIR_filter_axi_smc_1 is configured in Low-area mode as all propagated traffic is low-bandwidth (AXI4LITE). SI S00_AXI has property HAS_BURST == 1. WRAP bursts are not supported in Low-area mode and will result in DECERR if received.
+WARNING: [xilinx.com:ip:smartconnect:1.0-1] FIR_filter_axi_smc_1: If WRAP transactions are required then turn off Low-area mode using ADVANCED_PROPERTIES. Execute following: set_property CONFIG.ADVANCED_PROPERTIES {__experimental_features__ {disable_low_area_mode 1}} [get_bd_cells /FIR_filter_axi_smc_1]
+INFO: [Ipptcl 7-1463] No Compatible Board Interface found. Board Tab not created in customize GUI
+INFO: [xilinx.com:ip:fir_compiler:7.2-913] /filter/fir Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+INFO: [xilinx.com:ip:fir_compiler:7.2-913] /filter/fir Data_Width has been set to manual on the GUI. It will not be updated during validation with a propagated value.
+Wrote  : <C:\Repositories\PYNQ-Z2\FIR_filter\FIR_filter.srcs\sources_1\bd\FIR_filter\FIR_filter.bd> 
+Verilog Output written to : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/synth/FIR_filter.v
+Verilog Output written to : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/sim/FIR_filter.v
+Verilog Output written to : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/hdl/FIR_filter_wrapper.v
+make_wrapper: Time (s): cpu = 00:00:21 ; elapsed = 00:00:56 . Memory (MB): peak = 1587.602 ; gain = 30.363
+add_files -norecurse c:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/hdl/FIR_filter_wrapper.v
+launch_runs impl_1 -to_step write_bitstream -jobs 6
+INFO: [BD 41-1662] The design 'FIR_filter.bd' is already validated. Therefore parameter propagation will not be re-run.
+Wrote  : <C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.srcs/sources_1/bd/FIR_filter/ui/bd_81737b28.ui> 
+Verilog Output written to : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/synth/FIR_filter.v
+Verilog Output written to : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/sim/FIR_filter.v
+Verilog Output written to : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/hdl/FIR_filter_wrapper.v
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'M_AXI_GP0'. A default connection has been created.
+INFO: [IP_Flow 19-5611] Unable to find an associated reset port for the interface 'S_AXI_HP0'. A default connection has been created.
+INFO: [BD 41-1029] Generation completed for the IP Integrator block processing_system7_0 .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block filter/fir .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block filter/fir_dma .
+Exporting to file c:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/ip/FIR_filter_axi_smc_1/bd_0/hw_handoff/FIR_filter_axi_smc_1.hwh
+Generated Hardware Definition File c:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/ip/FIR_filter_axi_smc_1/bd_0/synth/FIR_filter_axi_smc_1.hwdef
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_smc .
+INFO: [BD 41-1029] Generation completed for the IP Integrator block rst_ps7_0_100M .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/ip/FIR_filter_axi_mem_intercon_imp_auto_pc_0/FIR_filter_axi_mem_intercon_imp_auto_pc_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_pc .
+WARNING: [IP_Flow 19-4994] Overwriting existing constraint file 'c:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/ip/FIR_filter_axi_mem_intercon_imp_auto_us_0/FIR_filter_axi_mem_intercon_imp_auto_us_0_ooc.xdc'
+INFO: [BD 41-1029] Generation completed for the IP Integrator block axi_mem_intercon/s00_couplers/auto_us .
+Exporting to file C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/hw_handoff/FIR_filter.hwh
+Generated Hardware Definition File C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.gen/sources_1/bd/FIR_filter/synth/FIR_filter.hwdef
+INFO: [IP_Flow 19-6930] IPCACHE: runCacheChecks() number of threads = 8
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP FIR_filter_axi_dma_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP FIR_filter_axi_mem_intercon_imp_auto_pc_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP FIR_filter_axi_mem_intercon_imp_auto_us_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP FIR_filter_axi_smc_1
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP FIR_filter_fir_compiler_0_0
+INFO: [IP_Flow 19-6921] IPCACHE: Adding cache check func to thread queue for IP FIR_filter_rst_ps7_0_100M_1
+INFO: [IP_Flow 19-8020] IPCACHE: runCacheChecks() calling threadPool finishWork()
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: FIR_filter_axi_dma_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: FIR_filter_axi_mem_intercon_imp_auto_pc_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: FIR_filter_axi_mem_intercon_imp_auto_us_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: FIR_filter_axi_smc_1
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: FIR_filter_fir_compiler_0_0
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: FIR_filter_rst_ps7_0_100M_1
+[Wed Apr  2 09:14:20 2025] Launched FIR_filter_axi_dma_0_0_synth_1, FIR_filter_rst_ps7_0_100M_1_synth_1, FIR_filter_processing_system7_0_0_synth_1, FIR_filter_axi_smc_1_synth_1, FIR_filter_axi_mem_intercon_imp_auto_us_0_synth_1, FIR_filter_axi_mem_intercon_imp_auto_pc_0_synth_1, FIR_filter_fir_compiler_0_0_synth_1, synth_1...
+Run output will be captured here:
+FIR_filter_axi_dma_0_0_synth_1: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_axi_dma_0_0_synth_1/runme.log
+FIR_filter_rst_ps7_0_100M_1_synth_1: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_rst_ps7_0_100M_1_synth_1/runme.log
+FIR_filter_processing_system7_0_0_synth_1: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_processing_system7_0_0_synth_1/runme.log
+FIR_filter_axi_smc_1_synth_1: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_axi_smc_1_synth_1/runme.log
+FIR_filter_axi_mem_intercon_imp_auto_us_0_synth_1: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_axi_mem_intercon_imp_auto_us_0_synth_1/runme.log
+FIR_filter_axi_mem_intercon_imp_auto_pc_0_synth_1: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_axi_mem_intercon_imp_auto_pc_0_synth_1/runme.log
+FIR_filter_fir_compiler_0_0_synth_1: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_fir_compiler_0_0_synth_1/runme.log
+synth_1: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/synth_1/runme.log
+[Wed Apr  2 09:14:20 2025] Launched impl_1...
+Run output will be captured here: C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/impl_1/runme.log
+launch_runs: Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1612.637 ; gain = 25.035
+open_run impl_1
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.173 . Memory (MB): peak = 1880.070 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 77 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2024.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.022 . Memory (MB): peak = 2004.320 ; gain = 2.777
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 2602.012 ; gain = 0.000
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2602.012 ; gain = 0.000
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.205 . Memory (MB): peak = 2602.012 ; gain = 0.000
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2602.012 ; gain = 0.000
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.057 . Memory (MB): peak = 2602.012 ; gain = 0.000
+Read Physdb Files: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.287 . Memory (MB): peak = 2602.012 ; gain = 0.000
+Restored from archive | CPU: 1.000000 secs | Memory: 0.000000 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.287 . Memory (MB): peak = 2602.012 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 2602.012 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 3 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 2 instances
+  RAM32X1D => RAM32X1D (RAMD32(x2)): 1 instance 
+
+open_run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:16 . Memory (MB): peak = 2959.125 ; gain = 1309.352
+file copy -force C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/impl_1/FIR_filter_wrapper.bit C:/Repositories/PYNQ-Z2/FIR_filter/fir_filter.bit
