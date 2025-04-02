@@ -6,7 +6,7 @@ As a simple example of the FPGA hardware acceleration, we can use the adder exam
 1. From within a Jupyter Notebooks, in Python, upload the overlay to the FPGA, like so:
 ```python
 from pynq import Overlay
-overlay = BaseOverlay("adder.bit")
+overlay = Overlay("adder.bit")
 
 help(overlay)  # This provides info about the overlay
 ```

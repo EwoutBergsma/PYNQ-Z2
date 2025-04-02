@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2024.2 (64-bit)
+# SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
+# IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
+# SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
+# Start of session at: Wed Apr  2 09:14:26 2025
+# Process ID         : 28072
+# Current directory  : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_axi_smc_1_synth_1
+# Command line       : vivado.exe -log FIR_filter_axi_smc_1.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source FIR_filter_axi_smc_1.tcl
+# Log file           : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_axi_smc_1_synth_1/FIR_filter_axi_smc_1.vds
+# Journal file       : C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/FIR_filter_axi_smc_1_synth_1\vivado.jou
+# Running On         : HPLPF4WRX41
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26100
+# Processor Detail   : 13th Gen Intel(R) Core(TM) i5-1335U
+# CPU Frequency      : 2496 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 12
+# Host memory        : 34016 MB
+# Swap memory        : 5100 MB
+# Total Virtual      : 39117 MB
+# Available Virtual  : 18257 MB
+#-----------------------------------------------------------
+source FIR_filter_axi_smc_1.tcl -notrace
