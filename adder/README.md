@@ -13,9 +13,9 @@ help(overlay)  # This provides info about the overlay
 4. From within Jupyter Notebooks, interact with the FPGA to make it do addition. To do so you can use the adresses  `0x10` and `0x18` to write. The read address is `0x20`. This can be implemented as follows:
 
 ```python
-overlay.write(0x10, 3)  # Writing the integer 3 to address 0x10
-overlay.write(0x18, 6)  # Writing the integer 6 to address 0x18
-overlay.read(0x20)  # What will be the output!?
+overlay.add_0.write(0x10, 3)
+overlay.add_0.write(0X18, 6)
+overlay.add_0.read(0x20)  # What will be the output!?
 ```
 This above way of interacting with the FPGA is the default one. It is called a Memory Mapped Input Output (MMIO), as it literally writes and reads (read: inputs and outputs) to those specific memory addresses. One could [write a Python driver](https://pynq.readthedocs.io/en/latest/overlay_design_methodology/overlay_tutorial.html#Creating-a-Driver) to make it more user friendly.
 
