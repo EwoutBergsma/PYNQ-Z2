@@ -228,3 +228,6 @@ INFO: [Project 1-111] Unisim Transformation Summary:
 
 open_run: Time (s): cpu = 00:00:23 ; elapsed = 00:00:16 . Memory (MB): peak = 2959.125 ; gain = 1309.352
 file copy -force C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/impl_1/FIR_filter_wrapper.bit C:/Repositories/PYNQ-Z2/FIR_filter/fir_filter.bit
+open_bd_design {C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.srcs/sources_1/bd/FIR_filter/FIR_filter.bd}
+exit
+INFO: [Common 17-206] Exiting Vivado at Thu Apr  3 09:41:51 2025...
