@@ -26,7 +26,7 @@ overlay.add_0.register_map.c
 ```
 7. What's the output? Note that this is can be more convenient, as one does not need to know/remember the addresses!
 
-This above way of interacting with the FPGA is a typical one. It is called a Memory Mapped Input Output (MMIO), as it literally writes and reads (read: inputs and outputs) to those specific memory addresses. One could [write a Python driver](https://pynq.readthedocs.io/en/latest/overlay_design_methodology/overlay_tutorial.html#Creating-a-Driver) to make it more user friendly.
+This above way of interacting with the FPGA is a typical one. It is called a Memory Mapped Input Output (MMIO), as it literally writes and reads (read: inputs and outputs) to those specific memory addresses. One could also opt to [write a Python driver](https://pynq.readthedocs.io/en/latest/overlay_design_methodology/overlay_tutorial.html#Creating-a-Driver) to make it more user friendly.
 
 # There is more
 
