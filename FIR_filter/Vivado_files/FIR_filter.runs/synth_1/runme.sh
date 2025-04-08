@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/synth_1'
+HD_PWD='C:/Repositories/PYNQ-Z2/FIR_filter/Vivado_files/FIR_filter.runs/synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -41,4 +41,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log FIR_filter_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source FIR_filter_wrapper.tcl
+EAStep vivado -log design_1_wrapper.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl

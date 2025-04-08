@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Repositories/PYNQ-Z2/FIR_filter/FIR_filter.runs/impl_1'
+HD_PWD='C:/Repositories/PYNQ-Z2/FIR_filter/Vivado_files/FIR_filter.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log
@@ -43,6 +43,6 @@ EAStep()
 
 # pre-commands:
 /bin/touch .init_design.begin.rst
-EAStep vivado -log FIR_filter_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source FIR_filter_wrapper.tcl -notrace
+EAStep vivado -log design_1_wrapper.vdi -applog -m64 -product Vivado -messageDb vivado.pb -mode batch -source design_1_wrapper.tcl -notrace
 
 
