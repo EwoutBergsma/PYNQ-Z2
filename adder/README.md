@@ -47,3 +47,4 @@ void add(int a, int b, int& c) {
 }
 ```
 
+#TODO update the above explanation. The [original source](https://www.youtube.com/watch?v=2ErFDGSv5EE) uses Vivado HLS. That software package got deprecated and replaced by Vitis HLS, which worked fine and was very similar to Vivado HLS. However, Vitis HLS now got deprecated as well, and its functionality should now be included in just Vitis (not HLS). This still needs to be figured out. The deprecation is extra inconvenient because those software packages are the ones that come with the Vivado installation, so installing different versions of the different softwares is cumbersome.
