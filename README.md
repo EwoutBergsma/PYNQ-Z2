@@ -15,8 +15,9 @@ Two main steps need to be taken to in terms of installing software for the PYNQ 
    1. Once it is done, insert the SD card into the PYNQ Z2.
 2. Install Vivado on your computer.
     1. For Windows, download from [here](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html), Linux is available elsewhere, MacOS is unavailable.
+        - `2025.2` appears to have issues with our hardware, `2023.2` is confirmed working.
         - Unfortunately you will have to make an account (you can put Hanze's information).
-    2. Launch the downloaded executable, download Vivado ML Standard (you can prevent it from installing unnessecary stuff, that can save a lot of time. The downloader asks you to disable your antivirus software, we do not recommend this).
+    3. Launch the downloaded executable, download Vivado ML Standard (you can prevent it from installing unnessecary stuff, that can save a lot of time. The downloader asks you to disable your antivirus software, we do not recommend this).
         - Next > Login (optionally choose `Download Image`)> Vivado > Vivado ML Standard > Make sure to select Zynq-7000 (under SoCs)
     4. After download, make sure to also install Vivado (it require 55GB of free space).
 
