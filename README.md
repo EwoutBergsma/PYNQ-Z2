@@ -36,7 +36,7 @@ To really get going start with connecting to your PYNQ Z2 via the browser:
           1. The default password is `xilinx`.
       - At home you can probably hook up your PYNQ Z2 to your router.
           - The benefit to this is that the PYNQ Z2 will then also have internet access.
-          - Find the IP address of your PYNQ Z2 through your router's admin panel (or by scanning your local network).
+          - Find the IP address of your PYNQ Z2 through your router's admin panel (or by scanning your local network, e.g. on Windows using `Advanced IP Scanner`).
 2. In the Jupyter Notebooks environment you can find some example files. Feel invited to look at those, but do not spend too much time on them, they are of limited use.
 
 ## Getting started
