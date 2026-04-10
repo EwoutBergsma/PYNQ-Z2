@@ -8,7 +8,7 @@ Two main steps need to be taken to in terms of installing software for the PYNQ 
 
 1. Install PYNQ Z2 sofware on its SD Card.
    1. Download the software for the PYNQ Z2 from [here](https://github.com/Xilinx/PYNQ/releases).
-      - (At the time of writing the newest version was: `PYNQ-Z2 v3.0.0 SDCard image`).
+      - (At the time of writing the newest version was: `PYNQ-Z2 v3.1 SDCard image`, the Carlisle Release).
    1. Unzip it!
    1. Insert the SD Card into your pc.
    1. Using your favourite disk imager (mine is [Rufus](https://rufus.ie/en/)), flash the .img to the SD Card.
