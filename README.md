@@ -17,7 +17,8 @@ Two main steps need to be taken to in terms of installing software for the PYNQ 
     1. For Windows, download from [here](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools.html), Linux is available elsewhere, MacOS is unavailable.
         - Unfortunately you will have to make an account (you can put Hanze's information).
     2. Launch the downloaded executable, download Vivado ML Standard (you can prevent it from installing unnessecary stuff, that can save a lot of time. The downloader asks you to disable your antivirus software, we do not recommend this).
-    3. After download, make sure to also install Vivado (it require 55GB of free space).
+        - Next > Login (optionally choose `Download Image` > Vivado > Vivado ML Standard > Make sure to select Zynq-7000 (under SoCs)
+    4. After download, make sure to also install Vivado (it require 55GB of free space).
 
 Note, if one is interested in High Level Synthesis (HLS), an installation of Vits HLS (*not* Vivado HLS, that's the old software) would also be required. More on that in the [adder example](/adder/).
 
