@@ -1,6 +1,6 @@
 # PYNQ-Z2
 
-This repository is to assist master Smart Systems Engineering students in their third assignment of the Data Centric Architectures course.
+This repository is to assist master Smart Systems Engineering students in their FPGA assignment of the Data Centric Architectures course.
 
 ## Installing the software
 
