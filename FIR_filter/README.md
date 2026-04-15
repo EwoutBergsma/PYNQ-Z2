@@ -3,7 +3,7 @@
 So far we have only used provided overlays. Let's now make our own, using Vivado!
 
 1. If you have not already, we first need to add our board (PYNQ Z2) to Vivado.
-    - You can [download from this page](https://www.tulembedded.com/FPGA/ProductsPYNQ-Z2.html#:~:text=Z2%20Board%20File), or find them in this repository. Copy and paste the `pynq-z2` folder into `<Xilinx installation directory>/Vivado/<version>/data/boards/board_files`. 
+    - You can [download from this page](https://www.tulembedded.com/FPGA/ProductsPYNQ-Z2.html#:~:text=Z2%20Board%20File), or find them in this repository. Copy and paste the (unzipped) `pynq-z2` folder into `<Xilinx installation directory>/Vivado/<version>/data/boards/board_files`. 
     - If `board_files` does not exist in the `board` folder, create it.
 1. Open Vivado
     - (I used version 2024.2)
