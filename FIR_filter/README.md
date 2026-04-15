@@ -8,7 +8,7 @@ So far we have only used provided overlays. Let's now make our own, using Vivado
 1. Open Vivado
     - (I used version 2024.2)
 1. Create Project
-1. `Next > give project name and a directory > next > RLT Project > Next > Next > Next > Boards > search pynq-z2 and select it > next > finish`
+1. `Next > give project name and a directory > next > RLT Project > Next > Next > Next > Boards > search pynq-z2 and select it (you may need to click "refresh" first) > next > finish`
 1. Follow [this tutorial](https://youtu.be/PwG037LuNvA?si=_ieIkane3-Y2PiZm&t=145) from 2:25 onward
     - At around 04:10 the tutorial uses [this website](http://t-filter.engineerjs.com/) for creating the filter coefficients (note, he uses mHz, **not** MHz).
     - At around 7:51 you may get critical warnings, you can ignore those, but [here](https://forum.digilent.com/topic/21356-getting-warnings-while-creating-vivado-project-with-zynq-boards/) you can read more about them.
