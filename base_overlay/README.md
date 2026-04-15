@@ -17,6 +17,7 @@ The base overlay comes already installed on your PYNQ Z2 (assuming you followed 
 1. Create a new Jupyter Notebooks, by connecting and interfacing with the Jupyter Notebooks environment as explained [here](/README.md#connecting)
 1. In a code cell add the following code:
 ```python
+import time
 from pynq.overlays.base import BaseOverlay
 base = BaseOverlay("base.bit")  # This uploads the provided base overlay to the FPGA of the PYNQ's SoC
 
@@ -35,7 +36,7 @@ help(base.leds)
 5. From that output we can learn that these are addressable, one of the examples informs that one can do:
 ```python
 base.leds[0].on()
-delay(100)
+time.sleep(1)
 base.leds[0].off()
 ```
 6. Another useful trick is to use Python's build-in dir() function to find properties and methods of the specified object (more info about dir() [here](https://www.w3schools.com/python/ref_func_dir.asp)):
