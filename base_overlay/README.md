@@ -1,6 +1,6 @@
 # Preliminary info
 
-At this point it is important to understand the main hardware concepts of the PYNQ Z2. The System on a Chip (SoC) that is at the heart of the PYNQ Z2 belongs to the AMD ZYNQ 7000 family. On the PYNQ Z2 this chip is located underneath the black heatsink. Most importantly it features two subsystems:
+At this point it is important to understand the main hardware concepts of the PYNQ Z2. The System on a Chip (SoC) that is at the heart of the PYNQ Z2 belongs to the AMD ZYNQ 7000 family. On the PYNQ Z2 the SoC is located underneath the black heatsink. Most importantly it features two subsystems:
 - Processing System (PS): An ARM processor that runs a linux operating system, hosting the Jupyter Notebook webserver.
 - Programmable Logic (PL): Essentially the Field Programmable Gate Array (FPGA).
 
